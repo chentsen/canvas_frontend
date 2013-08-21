@@ -1,0 +1,7 @@
+{
+  "name": "canvas",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-ember-handlebars": "~0.7.0"
+  }
+}

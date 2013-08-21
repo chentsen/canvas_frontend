@@ -1,0 +1,196 @@
+.gridster {
+  /*width: 100%;*/
+  margin-top: 60px;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-size: 22px;
+  color: #fff;
+}
+.gridster .gs_w {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.tile-list {
+  /*margin-left: 60px;*/
+}
+
+
+.tile-container {
+  overflow: hidden;
+  text-align: center;
+}
+
+/*
+#the-grid .tile-container {
+  padding-bottom: 25%;
+  position: relative;
+  overflow: hidden;
+  height: 0;
+}
+
+#the-grid .tile-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+*/
+
+ [data-col="8"] { left:980px;}
+ [data-col="7"] { left:840px;}
+ [data-col="6"] { left:700px;}
+ [data-col="5"] { left:560px;}
+ [data-col="4"] { left:420px;}
+ [data-col="3"] { left:280px;}
+ [data-col="2"] { left:140px;}
+ [data-col="1"] { left:0px;}
+ [data-row="16"] { top:2100px;}
+ [data-row="15"] { top:1960px;}
+ [data-row="14"] { top:1820px;}
+ [data-row="13"] { top:1680px;}
+ [data-row="12"] { top:1540px;}
+ [data-row="11"] { top:1400px;}
+ [data-row="10"] { top:1260px;}
+ [data-row="9"] { top:1120px;}
+ [data-row="8"] { top:980px;}
+ [data-row="7"] { top:840px;}
+ [data-row="6"] { top:700px;}
+ [data-row="5"] { top:560px;}
+ [data-row="4"] { top:420px;}
+ [data-row="3"] { top:280px;}
+ [data-row="2"] { top:140px;}
+ [data-row="1"] { top:0px;}
+ [data-sizey="1"] { height:140px;}
+ [data-sizey="2"] { height:280px;}
+ [data-sizey="3"] { height:420px;}
+ [data-sizey="4"] { height:560px;}
+ [data-sizey="5"] { height:700px;}
+ [data-sizey="6"] { height:840px;}
+ [data-sizey="7"] { height:980px;}
+ [data-sizey="8"] { height:1120px;}
+ [data-sizey="9"] { height:1260px;}
+ [data-sizey="10"] { height:1400px;}
+ [data-sizey="11"] { height:1540px;}
+ [data-sizey="12"] { height:1680px;}
+ [data-sizey="13"] { height:1820px;}
+ [data-sizey="14"] { height:1960px;}
+ [data-sizey="15"] { height:2100px;}
+ [data-sizex="1"] { width:140px;}
+ [data-sizex="2"] { width:280px;}
+ [data-sizex="3"] { width:420px;}
+ [data-sizex="4"] { width:560px;}
+ [data-sizex="5"] { width:700px;}
+ [data-sizex="6"] { width:840px;}
+
+
+
+
+/*
+
+[data-col="7"] { left:853px;}
+[data-col="6"] { left:711px;}
+[data-col="5"] { left:569px;}
+[data-col="4"] { left:427px;}
+[data-col="3"] { left:285px;}
+[data-col="2"] { left:143px;}
+[data-col="1"] { left:1px;}
+
+[data-col="1"] { left:0;}
+[data-col="2"] { left:12.5%;}
+[data-col="3"] { left:25%;}
+[data-col="4"] { left:37.5%;}
+[data-col="5"] { left:50%;}
+[data-col="6"] { left:62.5%;}
+[data-col="7"] { left:75%;}
+[data-col="8"] { left:87.5%;}
+
+
+[data-row="16"] { top:2131px;}
+[data-row="15"] { top:1989px;}
+[data-row="14"] { top:1847px;}
+[data-row="13"] { top:1705px;}
+[data-row="12"] { top:1563px;}
+[data-row="11"] { top:1421px;}
+[data-row="10"] { top:1279px;}
+[data-row="9"] { top:1137px;}
+[data-row="8"] { top:995px;}
+[data-row="7"] { top:853px;}
+[data-row="6"] { top:711px;}
+[data-row="5"] { top:569px;}
+[data-row="4"] { top:427px;}
+[data-row="3"] { top:285px;}
+[data-row="2"] { top:143px;}
+[data-row="1"] { top:1px;}
+
+[data-sizey="1"] { height:140px;}
+[data-sizey="2"] { height:282px;}
+[data-sizey="3"] { height:424px;}
+[data-sizey="4"] { height:566px;}
+[data-sizey="5"] { height:708px;}
+[data-sizey="6"] { height:850px;}
+[data-sizey="7"] { height:992px;}
+[data-sizey="8"] { height:1134px;}
+[data-sizey="9"] { height:1276px;}
+[data-sizey="10"] { height:1418px;}
+[data-sizey="11"] { height:1560px;}
+[data-sizey="12"] { height:1702px;}
+[data-sizey="13"] { height:1844px;}
+[data-sizey="14"] { height:1986px;}
+[data-sizey="15"] { height:2128px;}
+
+[data-sizex="1"] { width:12.5%;}
+[data-sizex="2"] { width:25%;}
+[data-sizex="3"] { width:37.5%;}
+[data-sizex="4"] { width:50%;}
+[data-sizex="5"] { width:62.5%;}
+[data-sizex="6"] { width:75%;}
+[data-sizex="7"] { width:87.5%;}
+[data-sizex="8"] { width:100%;}
+*/
+
+/* OG
+[data-col="7"] { left:853px;}
+[data-col="6"] { left:711px;}
+[data-col="5"] { left:569px;}
+[data-col="4"] { left:427px;}
+[data-col="3"] { left:285px;}
+[data-col="2"] { left:143px;}
+[data-col="1"] { left:1px;}
+[data-row="16"] { top:2131px;}
+[data-row="15"] { top:1989px;}
+[data-row="14"] { top:1847px;}
+[data-row="13"] { top:1705px;}
+[data-row="12"] { top:1563px;}
+[data-row="11"] { top:1421px;}
+[data-row="10"] { top:1279px;}
+[data-row="9"] { top:1137px;}
+[data-row="8"] { top:995px;}
+[data-row="7"] { top:853px;}
+[data-row="6"] { top:711px;}
+[data-row="5"] { top:569px;}
+[data-row="4"] { top:427px;}
+[data-row="3"] { top:285px;}
+[data-row="2"] { top:143px;}
+[data-row="1"] { top:1px;}
+[data-sizey="1"] { height:140px;}
+[data-sizey="2"] { height:282px;}
+[data-sizey="3"] { height:424px;}
+[data-sizey="4"] { height:566px;}
+[data-sizey="5"] { height:708px;}
+[data-sizey="6"] { height:850px;}
+[data-sizey="7"] { height:992px;}
+[data-sizey="8"] { height:1134px;}
+[data-sizey="9"] { height:1276px;}
+[data-sizey="10"] { height:1418px;}
+[data-sizey="11"] { height:1560px;}
+[data-sizey="12"] { height:1702px;}
+[data-sizey="13"] { height:1844px;}
+[data-sizey="14"] { height:1986px;}
+[data-sizey="15"] { height:2128px;}
+[data-sizex="1"] { width:140px;}
+[data-sizex="2"] { width:282px;}
+[data-sizex="3"] { width:424px;}
+[data-sizex="4"] { width:566px;}
+[data-sizex="5"] { width:708px;}
+[data-sizex="6"] { width:850px;}
+*/
+
