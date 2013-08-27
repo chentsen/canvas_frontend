@@ -21,3 +21,7 @@
 .cf:after {
   clear: both;
 }
+
+.tac {
+  text-align: center;
+}

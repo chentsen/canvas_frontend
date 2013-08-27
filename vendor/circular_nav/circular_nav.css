@@ -275,6 +275,9 @@ items should be rotated by x, minus (sum of angles - 180)2s (for this demo) */
 .cn-container {
   font-size: 14px;
 }
+.cn-container .cn-button {
+  background-color: #fff;
+}
 
 .cn-wrapper > ul {
   position: relative;

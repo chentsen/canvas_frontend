@@ -1,0 +1,75 @@
+.signup-view {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 2px 10px rgba(0,0,0,0.45);
+  -moz-box-shadow: 0 2px 10px rgba(0,0,0,0.45);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.45);
+  background: #fff;
+  margin: 70px auto;
+  position: relative;
+  /* width: 460px; */
+  width: 500px;
+  padding: 10px 40px 30px;
+  font-size: 13px;
+}
+.signup-view .canvas-logo {
+  width: 254px;
+  margin: 10px auto 21px;
+  display: block;
+}
+
+.signup-view h2 {
+  margin: 20px 0;
+}
+
+.canvas-signup-button {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.index-view {
+  text-align: center;
+  padding: 0 0 30px;
+}
+.index-view .logo-container h1 {
+  font-weight: 300;
+  font-size: 46px;
+  line-height: 100px;
+}
+.index-view h2 {
+  font-weight: 300;
+}
+.index-view .logo-container {
+background: #fffffb;
+background: -moz-linear-gradient(top,#fffffb 0,#f6f5f1 100%);
+background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fffffb),color-stop(100%,#f6f5f1));
+background: -webkit-linear-gradient(top,#fffffb 0,#f6f5f1 100%);
+background: -o-linear-gradient(top,#fffffb 0,#f6f5f1 100%);
+background: -ms-linear-gradient(top,#fffffb 0,#f6f5f1 100%);
+background: linear-gradient(top,#fffffb 0,#f6f5f1 100%);
+}
+
+.facebook-signup-button {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  font-family: "Open Sans",Arial,Helvetica,sans-serif;
+  background-color: #3a5898;
+  font-size: 18px;
+  display: inline-block;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  width: 150px;
+  cursor: pointer;
+}
+a.facebook-signup-button {
+  color: #fff;
+  text-decoration: none;
+}
+.facebook-signup-button .icon-facebook {
+  margin-right: 9px;
+  font-size: 21px;
+}

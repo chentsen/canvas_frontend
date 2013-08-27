@@ -1,4 +1,4 @@
-App.CanvasActionsView = Em.View.extend({
+App.CanvasActionsView = Ember.View.extend({
   //template: App.TEMPLATES['js/templates/canvas/actions.hbs'],
   templateName: 'canvas-actions',
   init: function(){
@@ -8,6 +8,20 @@ App.CanvasActionsView = Em.View.extend({
   },
 
   didInsertElement: function() {
+
+    var quoteCount = 0;
+
+    $('.add-photo').on('click', function (e) {
+      cnvs.grid.add_widget('<li class="tile-container" style="background:#000 url(\'' + 'dummy' + '\') no-repeat center center;"></li>', 2, 2, 1, 1);
+    });
+    $('.add-quote').on('click', function (e) {
+      var q = test_data.quotes[quoteCount++];
+      cnvs.grid.add_widget('<li class="tile-container" style="background-color:' + q.color + '"><div class="quote-text-heightfix"></div><div class="quote-text">' + q.text + '</div></li>', 2, 1, 1, 1);
+    });
+
+
+
+
 
   /*!
    * classie - class helper functions

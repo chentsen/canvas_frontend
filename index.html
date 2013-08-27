@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="vendor/jquery.gridster/jquery.gridster.css">
   <link rel="stylesheet" type="text/css" href="app/css/application.css">
   <link rel="stylesheet" type="text/css" href="app/css/application_.css">
+  <link rel="stylesheet" type="text/css" href="app/css/public.css">
   <link rel="stylesheet" type="text/css" href="app/css/grid.css">
   <link rel="stylesheet" type="text/css" href="app/css/helpers.css">
   <link rel="stylesheet" type="text/css" href="vendor/circular_nav/circular_nav.css">
@@ -18,18 +19,11 @@
   <!--
     ****** Application Template ******
   -->
-  <script type="text/x-handlebars">
+  <script type="text/x-handlebars" data-template-name="header">
     <div class="topbar">
       <a href="#" class="canvas-logo-container c-fl">
         <img class="canvas-logo" src="img/canvas_logo.gif"/>
       </a>
-
-      <!--
-      <ul class="grid-actions">
-        <li class="grid-action add-photo">Photo</li>
-        <li class="grid-action add-quote">Quote</li>
-      </ul>
-      -->
 
       <ul class="main-nav">
         <!--
@@ -38,7 +32,7 @@
         </li>
         -->
         <li class="main-nav-item">
-          <button data-toggle="modal" href="#create-canvas-modal" class="create-canvas-button btn btn-primary">Create Canvas</button>
+          <button data-toggle="modal" href="#create-canvas-modal" class="create-canvas-button btn btn-success">Create Canvas</button>
         </li>
         <li class="main-nav-item">
           <div class="dropdown">
@@ -92,11 +86,46 @@
   </script>
 
   <!--
+    ****** Application Template ******
+  -->
+  <script type="text/x-handlebars">
+    {{outlet header}}
+    {{outlet}}
+  </script>
+
+  <!--
+    ****** Index Template ******
+  -->
+  <script type="text/x-handlebars" data-template-name="index">
+    <div class="index-view signup-view">
+      <div class="logo-container"><h1>Canvas</h1></div>
+      <h2>Share moments. Creatively.</h2>
+      <div>
+        <a class="facebook-signup-button"><span class="icon-facebook"></span>Continue</a>
+        <div>
+          Or <a href="#/signup">sign up</a> with your email.
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <!--
+    ****** Public Site Template ******
+  -->
+  <script type="text/x-handlebars" data-template-name="public">
+    <div class="public-site">
+      <h1>Welcome to Canvas</h1>
+      {{outlet}}
+    </div>
+  </script>
+
+
+  <!--
     ****** Canvas Template ******
   -->
   <script type="text/x-handlebars" data-template-name="canvas">
     <div class="canvas-view-container">
-      <ul class="participants">
+      <ul class="participants hide">
         <li class="participant-avatar-container">
           <img class="participant-avatar" src="img/andy.jpg"/>
         </li>
@@ -105,12 +134,22 @@
         </li>
       </ul>
 
-      <div class="gridster" id="the-grid">
-        <ul class="tile-list">
-        </ul>
+      {{view App.GridView}}
+
+      <a class="left carousel-control" href="javascript:void(0)" data-slide="next">
+        <span class="icon-prev"></span>
+      </a>
+      <a class="right carousel-control" href="javascript:void(0)" data-slide="next">
+        <span class="icon-next"></span>
+      </a>
+
+      <div class="canvas-footer">
+        <h2 class="canvas-title">{{name}}</h2>
       </div>
 
-      {{view App.CanvasActionsView}}
+      {{#if canEdit}}
+        {{view App.CanvasActionsView}}
+      {{/if}}
     </div>
   </script>
 
@@ -119,14 +158,24 @@
       <button class="cn-button" id="cn-button">+</button>
       <div class="cn-wrapper" id="cn-wrapper">
           <ul>
-            <li><a href="#"><span class="icon-picture"></span></a></li>
-            <li><a href="#"><span class="icon-headphones"></span></a></li>
-            <li><a href="#"><span class="icon-home"></span></a></li>
-            <li><a href="#"><span class="icon-facetime-video"></span></a></li>
-            <li><a href="#"><span class="icon-envelope-alt"></span></a></li>
+            <li><a href="javascript:void(0)" class="add-photo"><span class="icon-picture"></span></a></li>
+            <li><a href="javascript:void(0)" class="add-quote"><span class="icon-quote-left"></span></a></li>
+            <!--<li><a href="#"><span class="icon-headphones"></span></a></li>-->
+            <li><a href="javascript:void(0)"><span class="icon-home"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-facetime-video"></span></a></li>
+            <li><a href="javascript:void(0)"><span class="icon-envelope-alt"></span></a></li>
            </ul>
       </div>
       <div id="cn-overlay" class="cn-overlay"></div>
+    </div>
+  </script>
+
+  <!--
+    ****** Grid Template ******
+  -->
+  <script type="text/x-handlebars" data-template-name="grid">
+    <div class="gridster" id="the-grid">
+      <ul class="tile-list"></ul>
     </div>
   </script>
 
@@ -135,7 +184,7 @@
   -->
   <script type="text/x-handlebars" data-template-name="browse">
     <ul class="leftnav">
-      <li><a href="#/browse/my">My Canvases</a></li>
+      <li><a href="#/browse/my">Participating</a></li>
       <li><a href="#/browse/trending">Favorite</a></li>
     </ul>
     <div class="browse-content-container">{{outlet}}</div>
@@ -173,11 +222,43 @@
   </script>
 
   <!--
-    ****** Landing Page Template ******
+    ****** Sign Up Page Template ******
   -->
-  <script type="text/x-handlebars" data-template-name="landing">
-    <h2>Join Canvas!</h2>
-    <a href="javascript:void(0);" class="fb-sign-in">Sign In</a>
+  <!--
+  <script type="text/x-handlebars" data-template-name="signup">
+    {{view App.SignupFormView}}
+  </script>
+  -->
+
+  <script type="text/x-handlebars" data-template-name="signup">
+    <h2>Join Canvas today.</h2>
+    <form>
+      <div class="form-group">
+        <label for="signup-first-name">First Name</label>
+        <input type="text" class="form-control" id="signup-first-name" placeholder="First name">
+      </div>
+      <div class="form-group">
+        <label for="signup-last-name">Last Name</label>
+        <input type="text" class="form-control" id="signup-last-name" placeholder="Last name">
+      </div>
+      <div class="form-group">
+        <label for="signup-email">Email address</label>
+        <input type="email" class="form-control" id="signup-email" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label for="signup-password">Password</label>
+        <input type="password" class="form-control" id="signup-password" placeholder="Password">
+      </div>
+      <span class="help-block">By creating an account, I accept Canvas's Terms of Service and Privacy Policy.</span>
+      <button type="submit" class="btn btn-primary canvas-signup-button">Create my account</button>
+    </form>
+  </script>
+
+  <!--
+    ****** Loading Template ******
+  -->
+  <script type="text/x-handlebars" data-template-name="loading">
+    <h1>Loading...</h1>
   </script>
 
 
@@ -208,58 +289,40 @@
 -->
 
   <script src="vendor/jquery-1.10.2.js"></script>
+  <script src="vendor/json2.js"></script>
   <script src="vendor/ember/handlebars-1.0.0-rc.4.js"></script>
   <script src="vendor/ember/ember-1.0.0-rc.6.1.js"></script>
   <script src="vendor/ember/ember-data-latest.js"></script>
   <script src="vendor/bootstrap/bootstrap.js"></script>
   <script src="vendor/jquery.gridster/jquery.gridster.js"></script>
   <script src="app/js/app.js"></script>
+  <script src="app/js/routes.js"></script>
+  <script src="app/js/helpers.js"></script>
   <script src="app/js/models/canvas.js"></script>
+  <script src="app/js/models/user.js"></script>
+  <script src="app/js/views/header.js"></script>
+  <script src="app/js/views/public/index.js"></script>
+  <script src="app/js/views/public/signup.js"></script>
+  <script src="app/js/views/canvas/canvas.js"></script>
+  <script src="app/js/views/canvas/grid.js"></script>
   <script src="app/js/views/canvas/actions.js"></script>
+  <script src="dummy_data/fixtures.js"></script>
   <script src="dummy_data/test_data.js"></script>
 
   <script>
     var cnvs = {};
     $(function(){ //DOM Ready
-      $(".gridster ul").gridster({
-        widget_margins: [0, 0],
-        widget_base_dimensions: [140, 140],
-        max_cols: 8,
-        max_size_x: 8,
-        responsive: true,
-        autogenerate_stylesheet: false
-      });
 
-      cnvs.grid = $(".gridster ul").gridster().data('gridster');
-
-      /* test data */
-      var photoCount = 0,
-          quoteCount = 0;
-      console.debug('hihi');
-      $('.add-photo').on('click', function (e) {
-        console.debug('adding photo');
-        cnvs.grid.add_widget('<li class="tile-container" style="background:#000 url(\'' + test_data.images[photoCount++].src + '\') no-repeat center center;"></li>', 2, 2, 1, 1);
-      });
-      $('.add-quote').on('click', function (e) {
-        console.debug('adding quote');
-        var q = test_data.quotes[quoteCount++];
-        cnvs.grid.add_widget('<li class="tile-container" style="background-color:' + q.color + '"><div class="quote-text-heightfix"></div><div class="quote-text">' + q.text + '</div></li>', 2, 1, 1, 1);
-      });
-
+      //login
       /*
-      $('body').delegate('.fb-sign-in', 'click', function() {
         $.ajax({
-          type: "POST",
-          url: "http://api.use-canvas.com:6005/v1/user/fb_oauth",
-          success: function(data, textStatus, jqXHR) {
-            console.debug('SUCCESS');
-          },
-          error: function(jqXHR, textStatus, errorThrown) {
-            console.debug('ERROR');
-          }
+          type: 'POST',
+          url: '/v1/user/login',
+          data: data,
+          contentType: "application/json;charset=utf-8",
+          dataType:"json"
         });
-      });
-      */
+*/
     });
   </script>
 </body>

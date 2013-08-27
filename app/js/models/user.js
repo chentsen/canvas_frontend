@@ -1,4 +1,4 @@
-App.User = DS.Model.extend({
+App.model.User = DS.Model.extend({
   first_name: DS.attr('string'),
   last_name: DS.attr('string'),
   full_name: function() {

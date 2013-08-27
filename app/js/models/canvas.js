@@ -1,8 +1,10 @@
-App.Canvas = DS.Model.extend({
+App.model.Canvas = DS.Model.extend({
   name: DS.attr('string'),
   description: DS.attr('string'),
-  contributors: DS.hasMany('App.User'),
-  owner: DS.belongsTo('App.User')
+  contributors: DS.hasMany('App..model.User'),
+  owner: DS.belongsTo('App.model.User'),
+  folder: DS.attr('string'),
+  canEdit: DS.attr('boolean')
 });
 
 /*
