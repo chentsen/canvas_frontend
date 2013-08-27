@@ -55,7 +55,7 @@ App.SignupView = Ember.View.extend({
       contentType:"application/json;charset=utf-8", //?
       success: function(data, textStatus, jqXHR) {
         console.debug('SUCCESS');
-        this.transitionTo('canvas');
+        self.transitionTo('canvas');
       },
       error: function(jqXHR, textStatus, errorThrown) {
         console.debug('ERROR');
